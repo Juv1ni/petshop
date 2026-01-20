@@ -1,16 +1,15 @@
-import { Divisor } from "./components/divisor";
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { ServicesSection } from "./components/services_section";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Services } from "./components/Services";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <Divisor color="bg-pink-500" />
       <Hero />
-      <Divisor color="bg-purple-500" />
-      <ServicesSection />
-    </main>
+      <Services />
+      <Footer />
+    </>
   );
 }

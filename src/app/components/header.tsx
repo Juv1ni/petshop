@@ -1,54 +1,39 @@
-import { ContactButton } from "./contact_button";
-
 export function Header() {
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4 grid grid-cols-[auto_1fr_auto] items-center">
-        {/* Logo - esquerda */}
-        <div className="flex flex-col items-center">
+    <header className="navbar bg-base-100 shadow-md px-8">
+      {/* LOGO */}
+      <div className="navbar-start">
+        <div className="flex items-center flex-col">
           <h1 className="text-2xl font-bold text-pink-400">
             Luz, Câmera, Pata
           </h1>
-          <h2 className="text-sm font-bold text-gray-700 italic">
-            STUDIO DO SEU PET
-          </h2>
+          <p className="text-sm italic text-gray-500">Studio do seu Pet</p>
         </div>
+      </div>
 
-        {/* Menu - meio */}
-        <nav className="flex justify-center">
-          <ul className="flex items-center space-x-10">
-            {["Início", "Serviços", "Sobre"].map((item) => (
-              <li key={item}>
-                <a
-                  href="#"
-                  className="
-                    relative
-                    font-bold
-                    text-gray-500
-                    hover:text-pink-400
-                    after:content-['']
-                    after:absolute
-                    after:left-1/2
-                    after:-translate-x-1/2
-                    after:-bottom-1
-                    after:h-0.5
-                    after:w-0
-                    after:bg-pink-400
-                    after:transition-[width]
-                    after:ease-out
-                    after:duration-300
-                    hover:after:w-full
-                  "
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      {/* MENU */}
+      <div className="navbar-center hidden md:flex">
+        <ul className="menu menu-horizontal gap-6 font-semibold">
+          <li>
+            <a>Início</a>
+          </li>
+          <li>
+            <a>Serviços</a>
+          </li>
+          <li>
+            <a>Sobre</a>
+          </li>
+          <li>
+            <a>Contato</a>
+          </li>
+        </ul>
+      </div>
 
-        {/* Contato - direita*/}
-        <ContactButton label="Agendar" />
+      {/* BOTÃO */}
+      <div className="navbar-end">
+        <button className="btn text-black rounded-full font-bold bg-pink-400 hover:bg-pink-500 hover:ease-in-out duration-300">
+          Agendar Ensaio
+        </button>
       </div>
     </header>
   );
