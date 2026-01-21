@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Header() {
   return (
     <header className="navbar bg-base-100 shadow-md px-8">
@@ -13,26 +15,27 @@ export function Header() {
 
       {/* MENU */}
       <div className="navbar-center hidden md:flex">
-        <ul className="menu menu-horizontal gap-6 font-semibold">
-          <li>
-            <a>Início</a>
-          </li>
-          <li>
-            <a>Serviços</a>
-          </li>
-          <li>
-            <a>Sobre</a>
-          </li>
-          <li>
-            <a>Contato</a>
-          </li>
+        <ul className="menu menu-horizontal gap-6">
+          {["Início", "Serviços", "Sobre", "Contato"].map((item) => (
+            <li key={item}>
+              <a href={`#${item.toLowerCase()}`} className="nav-link">
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       {/* BOTÃO */}
       <div className="navbar-end">
-        <button className="btn text-black rounded-full font-bold bg-pink-400 hover:bg-pink-500 hover:ease-in-out duration-300">
-          Agendar Ensaio
+        <button className="btn text-black rounded-full font-bold bg-gray-100 hover:bg-gray-300 hover:ease-in-out duration-300">
+          <Link
+            href="https://wa.me/5585996587275?text=Olá!%20Quero%20agendar%20um%20ensaio%20pet"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            Agendar Ensaio 🐾
+          </Link>
         </button>
       </div>
     </header>
